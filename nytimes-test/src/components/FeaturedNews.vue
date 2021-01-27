@@ -1,5 +1,6 @@
 <template>
   <section class="featured-news">
+    <h2>{{ pageTitle }}</h2>
     <ul>
       <li v-for="(item, index) in mostPopular" :key="index" class="card">
         <a :href="item.url" target="_blank" rel="noopener noreferrer">
@@ -10,7 +11,7 @@
           </div>
           <div class="card-content">
             <div class="content">
-              <h2 class="title">{{ item.title }}</h2>
+              <h3 class="title">{{ item.title }}</h3>
               <p class="subtitle">{{ item.abstract }}</p>
             </div>
           </div>
@@ -25,6 +26,11 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'FeaturedNews',
+  data () {
+    return {
+      pageTitle: "Featured News"
+    }
+  },
 
   mounted () {
     this.fetchFeaturedNews()
@@ -46,14 +52,26 @@ export default {
 
 <style lang="scss" scoped>
   .featured-news{
-    font-size: 16px;
+    h2{
+      font-size: 2rem;
+      margin: 40px 0 10px;
+      text-align: left;
+      font-weight: bold;
+    }
     ul{
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       flex-wrap: wrap;
       li{
-        margin: 15px;
-        width: 350px
+        margin: 15px 15px 15px 0;
+        width: 350px;
+        h3{
+          font-size: 1.35rem;
+        }
+        p.subtitle{
+          margin-top: 10px;
+          font-size: 1rem;
+        }
       }
     }
   }

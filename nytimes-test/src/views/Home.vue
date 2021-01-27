@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
     <featured-news />
   </div>
 </template>
@@ -15,5 +14,3 @@ export default {
   }
 }
 </script>
-
-    FeatureNews
