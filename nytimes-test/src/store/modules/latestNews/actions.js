@@ -1,13 +1,13 @@
 import * as types from "./mutation-types";
-import FeaturedNewsService from '@/network/services/featured-news';
+import LatestNewsService from '@/network/services/latest-news';
 import { messageHelper } from "@/store/helpers/message-helper";
 
 
-export const fetchFeaturedNews = async ({ commit }) => {
+export const fetchLatestNews = async ({ commit }, payload) => {
   commit(types.SET_LOADING, true);
   try {
-    const response = await FeaturedNewsService.list()
-    commit(types.SET_FEATURED_NEWS, response.data.results);
+    const response = await LatestNewsService.list(payload)
+    commit(types.SET_LATEST_NEWS, response.data);
 
   } catch (error) {
     messageHelper.displayError("An unexpected error has occurred.");

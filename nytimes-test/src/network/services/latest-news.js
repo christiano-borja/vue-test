@@ -6,8 +6,8 @@ class LatestNewsService extends BaseService {
     super(`${process.env.VUE_APP_API_BASE_URL}`)
   }
   
-  list() {
-    return this.get(`topstories/v2/home.json?api-key=${process.env.VUE_APP_API_KEY}`)
+  list(section) {
+    return this.get(`news/v3/content/nyt/${section}.json?api-key=${process.env.VUE_APP_API_KEY}`)
   }
 
 }

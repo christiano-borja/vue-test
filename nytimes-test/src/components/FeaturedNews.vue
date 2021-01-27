@@ -6,7 +6,7 @@
         <a :href="item.url" target="_blank" rel="noopener noreferrer">
           <div class="card-image">
             <figure class="image">
-              <img :src="item.multimedia[0].url" :alt="item.multimedia[0].copyright">
+              <img :src="item.media[0]['media-metadata'][2].url" :alt="item.title">
             </figure>
           </div>
           <div class="card-content">
@@ -54,9 +54,13 @@ export default {
   .featured-news{
     h2{
       font-size: 2rem;
-      margin: 40px 0 10px;
+      margin: 70px 0 10px;
       text-align: left;
       font-weight: bold;
+      color: #fff;
+      background-color: #000000;
+      padding: 5px 15px;
+      border-radius: 5px 100px 0 5px;
     }
     ul{
       display: flex;

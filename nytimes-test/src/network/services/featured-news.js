@@ -7,7 +7,8 @@ class FeaturedNewsService extends BaseService {
   }
   
   list() {
-    return this.get(`topstories/v2/home.json?api-key=${process.env.VUE_APP_API_KEY}`)
+    return this.get(`mostpopular/v2/viewed/1.json?api-key=${process.env.VUE_APP_API_KEY}`)
+    
   }
 
 }
