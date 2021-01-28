@@ -15,6 +15,7 @@
               :lazy="true"
               v-model.trim="searchData"
               placeholder="Search"
+              @input="searchArticles()"
             ></b-input>
           </b-field>
           <b-button
