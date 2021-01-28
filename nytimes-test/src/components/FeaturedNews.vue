@@ -3,7 +3,12 @@
     <h2>{{ pageTitle }}</h2>
     <ul>
       <li v-for="(item, index) in mostPopular" :key="index" class="card">
-        <a :href="item.url" target="_blank" rel="noopener noreferrer">
+        <router-link
+            :to="{
+              name: 'ArticleDetail',
+              params: { id: item.uri }
+            }"
+          >
           <div class="card-image">
             <figure class="image">
               <img :src="item.media[0]['media-metadata'][2].url" :alt="item.title">
@@ -15,7 +20,7 @@
               <p class="subtitle">{{ item.abstract }}</p>
             </div>
           </div>
-        </a>
+        </router-link>
       </li>
     </ul>
   </section>
