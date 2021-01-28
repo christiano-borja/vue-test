@@ -11,7 +11,7 @@ class SearchArticlesService extends BaseService {
   }
 
   article(param) {
-    return this.get(`search/v2/articlesearch.json?fq=${param}&api-key=${process.env.VUE_APP_API_KEY}`)
+    return this.get(`search/v2/articlesearch.json?fq=uri%3A(%22${param}%22)&api-key=${process.env.VUE_APP_API_KEY}`)
   }
 
 }
